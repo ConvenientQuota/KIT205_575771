@@ -91,3 +91,19 @@ void destroy_list(List* self) {
 	}
 	self->head = NULL;
 }
+
+// Function to test the Linked List
+void list_test() {
+	List newList = new_list(); //creating new list
+
+	printf("Testing insert_at_front... \n");
+
+	int numbers[] = { 5, 3, 7, 2, 0 };
+	for (int i = 0; i < 5; i++) {
+		insert_at_front(&newList, numbers[i]);
+	}
+	printf("Expected: 0, 2, 7, 3, 5 \n");
+	printf(" Result:");
+
+	print_list(&newList);
+}
