@@ -107,3 +107,36 @@ void list_test() {
 
 	print_list(&newList);
 }
+
+void list_adhoc_test(List* self) {
+	List newList = new_list();
+	int quit;
+
+	while (!quit) {
+		int value;
+		printf("\nMenu\n");
+		printf("0. Exit\n");
+		printf("1. Insert\n");
+		printf("2. Delete\n");
+		printf("3. Print\n");
+		printf("\nEnter choice\n");
+		scanf("%d", &value);
+
+		switch (value) {
+			case 0:
+				quit = 1;
+				break;
+			case 1:
+				option_insert(&newList);
+				break;
+			case 2:
+				option_delete(&newList);
+				break;
+			case 3:
+				option_print(&newList);
+				break;
+			default:
+				printf("Please enter a different number. \n");
+		}
+	}
+}
