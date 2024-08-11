@@ -140,3 +140,25 @@ void list_adhoc_test(List* self) {
 		}
 	}
 }
+
+// A Function that will allow for the user to insert a value into the list
+void option_insert(List* self) {
+	int input;
+	printf("Enter a value to insert: ");
+	scanf("%d");
+	insert_at_front(self, input);
+}
+
+// Function that will allow the user to delete a value of their choosing from the list using the delete_list function
+void option_delete(List* self) {
+	int input;
+	printf("Enter a vaule to delete: ");
+	scanf("%d");
+	delete_list(self, input);
+}
+
+void option_print(List* self) {
+	printf("Current List: ");
+	print_list(self);
+}
+
