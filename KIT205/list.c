@@ -110,7 +110,7 @@ void list_test() {
 
 void list_adhoc_test(List* self) {
 	List newList = new_list();
-	int quit;
+	int quit = 0;
 
 	while (!quit) {
 		int value;
