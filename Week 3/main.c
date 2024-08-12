@@ -96,6 +96,32 @@ void list_adhoc_test(List* self) {
             scanf("%d", &a);
 
             clock_t start = clock();
+            
+            switch (value) {
+            case 1:
+                f1(a);
+                break;
+            case 2:
+                f2(a);
+                break;
+            case 3:
+                f3(a);
+                break;
+            case 4:
+                f4(a);
+                break;
+            case 5:
+                f5(a);
+                break;
+            case 6:
+                f6(a);
+                break;
+            case 7:
+                f7(a);
+                break;
+            default:
+                printf("Please enter another number.\n");
+            }
 		}
 	}
 }
