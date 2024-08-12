@@ -123,20 +123,20 @@ void list_adhoc_test(List* self) {
 		scanf("%d", &value);
 
 		switch (value) {
-			case 0:
-				quit = 1;
-				break;
-			case 1:
-				option_insert(&newList);
-				break;
-			case 2:
-				option_delete(&newList);
-				break;
-			case 3:
-				option_print(&newList);
-				break;
-			default:
-				printf("Please enter a different number. \n");
+		case 0:
+			quit = 1;
+			break;
+		case 1:
+			option_insert(&newList);
+			break;
+		case 2:
+			option_delete(&newList);
+			break;
+		case 3:
+			option_print(&newList);
+			break;
+		default:
+			printf("Please enter a different number. \n");
 		}
 	}
 }
@@ -162,3 +162,14 @@ void option_print(List* self) {
 	print_list(self);
 }
 
+// New Function 1. Reversing a list
+List reverse(List(*self) {
+	// Creating a new list thats empty and will be used to store the reversed values
+	List reversedList = new_List();
+	// Going over original list and adding each value to the from of the new list
+	for (ListNodePtr current = self->head; current != NULL; current = current = current->next) {
+		insert_at_front(&reversedList, current->data);
+	}
+	// returning the reversed new list
+	return reversedList;
+}
