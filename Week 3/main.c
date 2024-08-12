@@ -122,11 +122,19 @@ void list_adhoc_test(List* self) {
             default:
                 printf("Please enter another number.\n");
             }
-		}
+            //calculating time difference and converting to milliseconds
+            clock_t difference = clock() - start;
+            long msec = diff * 1000 / CLOCKS_PER_SEC;
+            printf("Time taken: %d milliseconds\n", msec);
+        }
+        else {
+            quit = 1;
+        }
 	}
 }
 
 int main() {
 	test_list();
+    list_adhoc_test();
 	return 0;
 }
