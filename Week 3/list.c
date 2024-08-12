@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include <time.h>
 
 
 // Function to create and return a new empty list.
