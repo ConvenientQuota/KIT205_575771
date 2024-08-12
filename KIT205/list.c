@@ -167,7 +167,7 @@ List reverse(List(*self) {
 	// Creating a new list thats empty and will be used to store the reversed values
 	List reversedList = new_List();
 	// Going over original list and adding each value to the from of the new list
-	for (ListNodePtr current = self->head; current != NULL; current = current = current->next) {
+	for (ListNodePtr current = self->head; current != NULL; current = current->next) {
 		insert_at_front(&reversedList, current->data);
 	}
 	// returning the reversed new list
