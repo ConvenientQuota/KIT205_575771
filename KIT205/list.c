@@ -173,3 +173,25 @@ List reverse(List(*self) {
 	// returning the reversed new list
 	return reversedList;
 }
+
+// New Function 2. Merging two ordered lists into a single ordered list
+List merge(List* list1, List* list2) {
+	// Creating a empty list that'll hold the merged values
+	List mergedList = new_list();
+	// initializing pointers that'll traverse the input lists
+	ListNodePtr current1 = list1->head, current2 = list2->head);
+	// While loop that will merge untill both lists are empty
+	while(current1 != NULL || current2 != NULL) {
+		// if current2 is Null or current 1 has a smaller value
+		if (current2 == NULL || (current1 != NULL && current1->data < current2->data)) {
+			// put current list 1 into the merged list then move onto the next node in list 1
+			insert_in_order(&mergedList, current1->data);
+			current1 = current1->next;
+		} else 
+	{   // insert the current list 2 into the merged list then moveont the next node in list 2
+		insert_in_order(&mergedList, current2->data);
+		current2 = current2->next;
+	}
+		// return the merged list
+	return mergedList;
+}
