@@ -145,7 +145,7 @@ void list_adhoc_test(List* self) {
 void option_insert(List* self) {
 	int input;
 	printf("Enter a value to insert: ");
-	scanf("%d", &input);
+	scanf("%d", %input);
 	insert_at_front(self, input);
 }
 
@@ -153,7 +153,7 @@ void option_insert(List* self) {
 void option_delete(List* self) {
 	int input;
 	printf("Enter a vaule to delete: ");
-	scanf("%d", &input);
+	scanf("%d");
 	delete_list(self, input);
 }
 
@@ -180,18 +180,86 @@ List merge(List* list1, List* list2) {
 	List mergedList = new_list();
 	// initializing pointers that'll traverse the input lists
 	ListNodePtr current1 = list1->head, current2 = list2->head);
-	// While loop that will merge untill both lists are empty
-	while(current1 != NULL || current2 != NULL) {
-		// if current2 is Null or current 1 has a smaller value
-		if (current2 == NULL || (current1 != NULL && current1->data < current2->data)) {
-			// put current list 1 into the merged list then move onto the next node in list 1
-			insert_in_order(&mergedList, current1->data);
-			current1 = current1->next;
-		} else 
+// While loop that will merge untill both lists are empty
+while (current1 != NULL || current2 != NULL) {
+	// if current2 is Null or current 1 has a smaller value
+	if (current2 == NULL || (current1 != NULL && current1->data < current2->data)) {
+		// put current list 1 into the merged list then move onto the next node in list 1
+		insert_in_order(&mergedList, current1->data);
+		current1 = current1->next;
+	}
+	else
 	{   // insert the current list 2 into the merged list then moveont the next node in list 2
 		insert_in_order(&mergedList, current2->data);
 		current2 = current2->next;
 	}
-		// return the merged list
+	// return the merged list
 	return mergedList;
+
+}
+
+long f1(long n) {
+	long k = 0;
+	for (long i = 0; i < n; i++) {
+		for (long j = 0; j < n; j++) {
+			k++;
+		}
+	}
+	return k;
+}
+
+void f2(long n) {
+	long k = 0;
+	for (long i = 0; i < n; i++) {
+		for (long j = 0; j < i; j++) {
+			k++;
+		}
+		for (long t = 0; t < 10000; t++) {
+			k++;
+		}
+	}
+}
+
+void f3(long n) {
+	if (n > 0) {
+		f3(n / 2);
+		f3(n / 2);
+	}
+}
+
+void f4(long n) {
+	if (n > 0) {
+		f4(n / 2);
+		f4(n / 2);
+		f2(n);
+	}
+}
+
+void f5(long n) {
+	long k = 0;
+	for (long i = 0; i < 10; i++) {
+		long j = n;
+		while (j > 0) {
+			f1(1000);
+			k++;
+			j = j / 2;
+		}
+	}
+}
+
+void f6(long n) {
+	f2(n);
+	f3(n);
+	f5(n);
+}
+
+void f7(long n) {
+	long k = 0;
+	for (long i = 0; i < f1(n); i++) {
+		k++;
+	}
+	for (long j = 0; j < n; j++) {
+		k++;
+	}
+}
 }
